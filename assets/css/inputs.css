@@ -1,0 +1,100 @@
+input, textarea, div.dropdown {
+    border: 2px solid #ccc;
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+    
+    color: var(--text);
+
+    padding: 1em;
+
+    font-family: 'Ubuntu', sans-serif;
+}
+
+button {
+    border: 2px solid var(--secondary);
+    border-radius: var(--border-radius);
+
+    background-color: var(--primary);
+    padding: 1em;
+
+    margin: 1em 0;
+
+    font-size: .8em;
+}
+
+button:disabled {
+    background-color: var(--secondary);
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--secondary);
+}
+
+button:disabled:hover {
+    cursor: not-allowed;
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+
+    padding: 0 2em;
+}
+
+.checkbox.inactive {
+    opacity: .5;
+}
+
+.checkbox > input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    border: 2px solid var(--accent);
+    background-color: var(--secondary);
+    min-height: 1.8em;
+    height: 1.8em;
+    min-width: 1.8em;
+    width: 1.8em;
+
+    margin: 4px 1em 0 0;
+}
+
+.checkbox:not(.inactive) > input[type="checkbox"]:checked ~ .checkmark {
+    background-color: var(--accent);
+}
+
+.checkbox:not(.inactive) > input[type="checkbox"]:checked ~ .checkmark::after {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    content: '2x';
+}
+
+.checkbox:not(.inactive):hover input ~ .checkmark {
+    background-color: var(--primary);
+}
+
+.checkbox:hover:not(.inactive) input:checked ~ .checkmark {
+    background-color: var(--accent);
+}
+
+
+input ~ label {
+    margin-top: 8px;
+}
+
+.invalid {
+    color: red;
+}
+
+input.invalid {
+    border-color: red;
+}
